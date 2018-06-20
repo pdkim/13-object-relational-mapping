@@ -1,0 +1,27 @@
+{
+  "name": "13-object-relational-mapping",
+  "version": "1.0.0",
+  "description": "1.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pdkim/13-object-relational-mapping.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pdkim/13-object-relational-mapping/issues"
+  },
+  "homepage": "https://github.com/pdkim/13-object-relational-mapping#readme",
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "eslint": "^4.19.1",
+    "jest": "^23.1.0",
+    "mongodb": "^2.2.35",
+    "superagent": "^3.8.3"
+  }
+}
