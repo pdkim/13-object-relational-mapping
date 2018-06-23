@@ -2,6 +2,7 @@
 
 import express from 'express';
 const router = express.Router();
+// import workers from '../models/worker.js';
 
 import modelFinder from '../middleware/models.js';
 router.param('model', modelFinder);
@@ -13,7 +14,7 @@ let sendJSON = (res, data) => {
 
 //GET ONE
 router.get('/api/v1/:model/:id', (req, res, next) => {
-  req.model.findOne(req.params.id)
+  req.model.findById(req.params.id)
     .then(data => {
       sendJSON(res, data);
     })
@@ -21,15 +22,15 @@ router.get('/api/v1/:model/:id', (req, res, next) => {
 });
 
 //GET ALL
-router.get('/api/v1/:model', (req, res, next) => {
-  req.model.fetchAll()
-    .then(data => sendJSON(res, data))
+router.get('/api/v1/:model', (req, res) => {
+  req.model.find({})
+    .then(data => res.send(data))
     .catch(next);
 });
 
 //DELETE
 router.delete('/api/v1/:model/:id', (req, res, next) => {
-  req.model.deleteOne(req.params.id)
+  req.model.findOneAndDelete(req.params.id)
     .then(() => {
       res.statusCode = 204;
       res.statusMessage = 'OK';
@@ -48,7 +49,7 @@ router.post('/api/v1/:model', (req, res, next) => {
 });
 
 router.put('/api/v1/:model/:id', (req, res, next) => {
-  req.model.putThis(req.params.id, req.body)
+  req.model.findOneAndUpdate(req.params.id, req.body)
     .then((data) => {
       sendJSON(res, data);
     })
