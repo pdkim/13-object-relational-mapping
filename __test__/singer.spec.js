@@ -9,3 +9,9 @@ models will not have status code.  be aware of that
 
 mockgoose will not actually add into the database because of afterAll
 */
+
+require('babel-register');
+
+const superagent = require('superagent');
+const app = require('../src/app.js');
+
