@@ -1,15 +1,4 @@
 'use strict';
-/*Mockgoose will behave the same as mongoose but in memory.  easier to see in memory
-
-afterAll can be run outside of describe
-
-beforeAll ran inside describe
-
-models will not have status code.  be aware of that
-
-mockgoose will not actually add into the database because of afterAll
-*/
-
 
 require('babel-register');
 
@@ -33,15 +22,15 @@ describe('API module should', () => {
     });
   });
 
-  afterAll((done) => {
+  afterEach((done) => {
     mockgoose.helper.reset().then(() => {
       done();
     });
   });
 
 
-  xit('return 404 if no id is found in database', () => {
-    return supertest.get(apiURL + '11111')
+  it('return 404 if no id is found in database', () => {
+    return supertest.get(`${apiURL}/1111`)
       .then(response => {
         expect(response.statusCode).toBe(404);
         expect(response.text).toBe('{"error":"Resource Not Found"}');
