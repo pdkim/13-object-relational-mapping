@@ -29,7 +29,7 @@ describe('API module should', () => {
   });
 
 
-  it('return 404 if no id is found in database', () => {
+  xit('return 404 if no id is found in database', () => {
     return supertest.get(`${apiURL}/1111`)
       .then(response => {
         expect(response.statusCode).toBe(404);

@@ -28,7 +28,7 @@ router.get('/api/v1/:model/:id', (req, res, next) => {
 //GET ALL
 router.get('/api/v1/:model', (req, res) => {
   req.model.find({})
-    .then(data => res.sendJSON(res, data))
+    .then(data => sendJSON(res, data, next))
     .catch(next);
 });
 
