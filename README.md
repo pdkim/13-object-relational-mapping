@@ -1,8 +1,8 @@
 ##Travis:
-
+[![Build Status](https://travis-ci.com/pdkim/13-object-relational-mapping.svg?branch=pk13)](https://travis-ci.com/pdkim/13-object-relational-mapping)
 
 ##Heroku:
-
+https://pk-13-object-relational-mappng.herokuapp.com/
 
 ##Github: 
 https://github.com/pdkim/13-object-relational-mapping

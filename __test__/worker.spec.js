@@ -137,4 +137,4 @@ describe('API module should', () => {
           });
       });
   });
-})
+});
